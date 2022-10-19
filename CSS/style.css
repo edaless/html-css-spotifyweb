@@ -6,12 +6,27 @@
 }
 
 :root{
+    
+    /* var(--grigio) */
+    --grigio: #b6b6b7;
     /* var(--h-barra-t) */
     --h-barra-t: 70px;
-    /* var(--w-barra-l) */
+    /* var(--w-barra-l) width barra left*/
     --w-barra-l: 100px;
     /* var(--w-main) */
     --w-main: calc(100vw - var(--w-barra-l));
+    /* var(--padd-main) */
+    --padd-main: 20px;
+    /* var(--w-section) */
+    --w-section: calc( var(--w-main) - 2 * var(--padd-main));
+    /* var(--n-cards)  numero di cards su una linea*/
+    --n-cards: 6;
+    /* var(--marg-right-card) */
+    --marg-right-card: 10px;
+    /* var(--w-card) */
+    --w-card: calc((var(--w-section)  - (var(--marg-right-card) * var(--n-cards))) / var(--n-cards));
+
+    
 }
 
 
@@ -30,25 +45,36 @@ h3{
 }
 
 
+.subtitle{
+    
+   
+    color: var(--grigio);
+    margin-top: 5px;
+
+    
+    /* DEBUG */
+    background-color: rgb(91, 83, 22);
+}
 /* MAIN //////////////////////////////////////////////////////////////// */
 main{
 
     margin-top: var(--h-barra-t);
     width: var(--w-main);
     margin-left: var(--w-barra-l);
-    padding: 20px;
+    padding: var(--padd-main);
     background-color: #141922;
 
 
     /* DEBUG */
 
-
-    height: 1000px;
+    
 }
 
 .navigazione {
     display: flex;
     justify-content: center;
+
+    margin-bottom: 20px;
 
 
     
@@ -57,21 +83,8 @@ main{
 .navigazione a{
     
     margin: 0 10px;
-
-
-
-
-    display: flex;
-    justify-content: center;
-
-
-    
-    color: #b6b6b7;
-    
-
-
-
-
+    font-size: 10px;    
+    color: var(--grigio);
     /* DEBUG */
     /* background-color: blue; */
 
@@ -82,8 +95,10 @@ section{
 
     margin: 20px 0;
     display: flex;
-    align-items: flex-start;
+    /* justify-content: space-between; */
     flex-wrap: wrap;
+    
+    /* flex-wrap: wrap; */
     
     /* DEBUG */
     background-color: rgb(0, 238, 255);
@@ -91,8 +106,9 @@ section{
 }
 
 .card{
-    margin-right: 10px;
-    margin-bottom: 10px;
+    width:  var(--w-card);
+    margin-right: var(--marg-right-card);
+    margin-bottom: 20px;
     /* DEBUG */
     background-color: rgb(17, 255, 0);
     /* border: 2px solid black; */
@@ -101,8 +117,8 @@ section{
 
 .immagine{
 
-    height: calc(var(--w-main) / 7);
-    width: calc(var(--w-main) / 7);
+    height:  var(--w-card);
+    width:  var(--w-card);
     
     
     min-width: 70px;
@@ -121,18 +137,28 @@ section{
     margin: 10px 0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+
+
+
+
+
+
+
     /* DEBUG */
     background-color: rgb(115, 0, 255);
     /* border: 2px solid black; */
 }
-.subtitle{
+
+.card .subtitle{
     
     display: flex;
     justify-content: center;
     align-items: center;
-    /* DEBUG */
-    background-color: rgb(255, 225, 0);
+
+    
+    
 }
 
 
@@ -151,10 +177,21 @@ section{
 
 
  @media screen and (max-width: 768px){
+    :root{        
+    /* var(--n-cards) */
+    --n-cards: 4;
+    }
+
     
  }
 
 
  @media screen and (max-width: 480px){
+    :root{
+    /* var(--w-barra-l) width barra left*/
+    --w-barra-l: 10px;        
+    /* var(--n-cards) */
+    --n-cards: 2;
+    }
     
  }
