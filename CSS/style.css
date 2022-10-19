@@ -2,4 +2,159 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
+
+:root{
+    /* var(--h-barra-t) */
+    --h-barra-t: 70px;
+    /* var(--w-barra-l) */
+    --w-barra-l: 100px;
+    /* var(--w-main) */
+    --w-main: calc(100vw - var(--w-barra-l));
+}
+
+
+li{
+    list-style: none; 
+    
+}
+a{
+    text-decoration: none;
+    
+}
+
+h3{
+    color: white;
+    font-weight: 700;
+}
+
+
+/* MAIN //////////////////////////////////////////////////////////////// */
+main{
+
+    margin-top: var(--h-barra-t);
+    width: var(--w-main);
+    margin-left: var(--w-barra-l);
+    padding: 20px;
+    background-color: #141922;
+
+
+    /* DEBUG */
+
+
+    height: 1000px;
+}
+
+.navigazione {
+    display: flex;
+    justify-content: center;
+
+
+    
+
+}
+.navigazione a{
+    
+    margin: 0 10px;
+
+
+
+
+    display: flex;
+    justify-content: center;
+
+
+    
+    color: #b6b6b7;
+    
+
+
+
+
+    /* DEBUG */
+    /* background-color: blue; */
+
+}
+
+
+section{
+
+    margin: 20px 0;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    
+    /* DEBUG */
+    background-color: rgb(0, 238, 255);
+    /* border: 2px solid black; */
+}
+
+.card{
+    margin-right: 10px;
+    margin-bottom: 10px;
+    /* DEBUG */
+    background-color: rgb(17, 255, 0);
+    /* border: 2px solid black; */
+
+}
+
+.immagine{
+
+    height: calc(var(--w-main) / 7);
+    width: calc(var(--w-main) / 7);
+    
+    
+    min-width: 70px;
+    min-height: 70px;
+    
+
+    
+    /* DEBUG */
+    background-color: rgb(255, 0, 81);
+    /* border: 2px solid black; */
+}
+
+
+
+.nome{
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* DEBUG */
+    background-color: rgb(115, 0, 255);
+    /* border: 2px solid black; */
+}
+.subtitle{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* DEBUG */
+    background-color: rgb(255, 225, 0);
+}
+
+
+
+
+
+
+
+
+
+
+/************************************************
+    SOLUZIONE RESPONSIVE
+ ************************************************/
+
+
+
+ @media screen and (max-width: 768px){
+    
+ }
+
+
+ @media screen and (max-width: 480px){
+    
+ }
