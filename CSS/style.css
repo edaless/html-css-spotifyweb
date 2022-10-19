@@ -13,7 +13,7 @@
     /* var(--h-barra-t) height barra top*/
     --h-barra-t: 80px;    
     /* var(--w-barra-l) width barra left*/
-    --w-barra-l: 230px;
+    --w-barra-l: 150px;
     /* var(--h-barra-b) height barra top*/
     --h-barra-b: 80px;   
 
@@ -24,12 +24,15 @@
 
     /* var(--w-section) */
     --w-section: calc( var(--w-main) - 2 * var(--padd-main));
+
     /* var(--n-cards)  numero di cards su una linea*/
     --n-cards: 6;
     /* var(--marg-right-card) */
     --marg-right-card: 10px;
-    /* var(--w-card) */
+    /* var(--w-card) width card*/
     --w-card: calc((var(--w-section)  - (var(--marg-right-card) * var(--n-cards))) / var(--n-cards));
+    /* var(--max-w-card) max width card */
+    --max-w-card: 150px;
 
     
 }
@@ -131,6 +134,7 @@ main{
 .navigazione {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 
     margin-bottom: 20px;
 
@@ -140,7 +144,9 @@ main{
 }
 .navigazione a{
     
-    margin: 0 10px;
+    margin: 0 15px;
+    line-height: 30px;
+    
     font-size: 10px;    
     color: var(--grigio);
     /* DEBUG */
@@ -153,18 +159,14 @@ section{
 
     margin: 20px 0;
     display: flex;
-    /* justify-content: space-between; */
-    flex-wrap: wrap;
     
-    /* flex-wrap: wrap; */
+    justify-content: space-between ;
     
-    /* DEBUG */
-    /* background-color: rgb(0, 238, 255); */
-    /* border: 2px solid black; */
 }
 
 .card{
     width:  var(--w-card);
+    max-width: var(--max-w-card);
     margin-right: var(--marg-right-card);
     margin-bottom: 50px;
     /* DEBUG */
@@ -179,8 +181,11 @@ section{
     width:  var(--w-card);
     
     
-    min-width: 70px;
-    min-height: 70px;
+    
+    
+    max-width: var(--max-w-card);
+    max-height: var(--max-w-card);
+    
     
 
     
@@ -230,18 +235,28 @@ section{
 
 /************************************************
     SOLUZIONE RESPONSIVE
- ************************************************/
+************************************************/
 
 
 
- @media screen and (max-width: 768px){
+@media screen and (max-width: 768px){
     :root{        
     /* var(--n-cards) */
     --n-cards: 4;
     }
 
     
- }
+    section{
+
+        margin: 20px 0;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        
+    }
+
+        
+}
 
 
  @media screen and (max-width: 480px){
@@ -255,7 +270,7 @@ section{
  @media screen and (max-width: 400px){
     :root{
     /* var(--w-barra-l) width barra left*/
-    --w-barra-l: 10px;        
+    --w-barra-l: 40px;        
     /* var(--n-cards) */
     --n-cards: 2;
     }
