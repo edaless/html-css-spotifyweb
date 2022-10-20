@@ -12,8 +12,20 @@
 
     /* var(--h-barra-t) height barra top*/
     --h-barra-t: 80px;    
+
     /* var(--w-barra-l) width barra left*/
     --w-barra-l: 200px;
+    /* var(--padd-barra-l)*/
+    --padd-barra-l: 20px;
+    /* var(--h-menu) */
+    --h-menu: 200px;    
+    /* var(--h-h4) */
+    --h-h4: 30px;
+        /* var(--h-playlists) */
+    --h-playlists: calc(100vh - var(--h-barra-b) - var(--h-menu) - var(--padd-barra-l) - var(--h-h4) - 10px)
+    ;
+
+
     /* var(--h-barra-b) height barra top*/
     --h-barra-b: 80px;   
 
@@ -43,11 +55,25 @@ a{
     
 }
 
+a:hover{
+    color: white;
+}
+
 h3{
     color: white;
     font-weight: 700;
 }
 
+h4{
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+
+    
+    /* DEBUG */
+    /* background-color: rgb(0, 238, 255); */
+    
+}
 
 .subtitle{
     
@@ -85,7 +111,7 @@ h3{
     position: fixed;
     top: 0;
     left:0;
-    padding: 20px;
+    padding: var(--padd-barra-l);
     
 
     height: calc(100vh - var(--h-barra-b));
@@ -95,6 +121,25 @@ h3{
     z-index: 200;
 
 }
+
+
+#menu{
+    height: var(--h-menu);
+    /* padding-bottom: 20px; */
+    /* DEBUG */
+    background-color: blue;
+    
+}
+
+
+#menu a{
+    display:flex;
+    margin-bottom: 15px;
+
+    /* DEBUG */
+    /* background-color: blue; */
+}
+
 
 #logo{
     
@@ -113,40 +158,37 @@ h3{
 }
 
 
-#barra-left a{
-    display:flex;
-    margin-bottom: 15px;
-
-    /* DEBUG */
-    /* background-color: blue; */
-}
-
 #barra-left i{
     margin-right: 10px;
 }
 
-#playlist{
-    color: white;
-    font-size: 13px;
-    font-weight: 600;
-    margin-top: 30px;
-    
+
+#barra-left h4{
+    line-height: var(--h-h4);
 }
 
 
+
+
 #playlists {
-    height: calc(100vh - var(--h-barra-b) - 300px);
+    height: var(--h-playlists);
     overflow: scroll;
+    
+
+    
+    /* DEBUG */
+    /* background-color: blue; */
     
 }
 
 #playlists a{
+    display:flex;
     
-    margin-top: 10px;
+    margin-top: 20px;
     font-size: 12px;
+    font-weight: 500;
     
 }
-
 
 
 
