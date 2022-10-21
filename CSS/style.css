@@ -13,6 +13,10 @@
     /* var(--h-barra-t) height barra top*/
     --h-barra-t: 80px;    
 
+
+
+
+    /* barra left//////////////////////////// */
     /* var(--w-barra-l) width barra left*/
     --w-barra-l: 200px;
     /* var(--h-barra-l) */
@@ -23,17 +27,18 @@
     --h-menu: 180px;    
     /* var(--h-h4) */
     --h-h4: 30px;
+    /* var(--h-add-play) */
+    --h-add-play: 30px;
+    /* var(--h-marg-bott-add) */
+    --h-marg-bott-add: 10px;
     /* var(--marg-bott-playlists) */
     --marg-bott-playlists: 10px;
     /* var(--h-playlists) */
-    --h-playlists: calc(var(--h-barra-l) - var(--h-menu) - var(--padd-barra-l) - var(--h-h4) - var(--h-inf) - var(--marg-bott-playlists))
+    --h-playlists: calc(var(--h-barra-l) - var(--h-menu) - var(--padd-barra-l) - var(--h-h4) - var(--h-inf) - var(--marg-bott-playlists) - var(--h-add-play) - var(--h-marg-bott-add))
     ;
     /* var(--h-inf) */
     --h-inf: 60px;
-    /* var(--h-user) */
-    /* --h-user: calc(var(--h-inf)) ; */
-
-    /* lavorando a questo */
+    
 
 
 
@@ -66,7 +71,7 @@ a{
     
 }
 
-a:hover{
+a:hover {
     color: white;
 }
 
@@ -122,7 +127,7 @@ h4{
     position: fixed;
     top: 0;
     left:0;
-    padding: var(--padd-barra-l);
+    padding: var(--padd-barra-l) var(--padd-barra-l) 0;
     
 
     height: var(--h-barra-l);
@@ -138,7 +143,7 @@ h4{
     height: var(--h-menu);
     /* padding-bottom: 20px; */
     /* DEBUG */
-    background-color: blue;
+    /* background-color: blue; */
     
 }
 
@@ -174,7 +179,7 @@ h4{
 }
 
 
-
+/* 
 #cont-play{
     display: flex;
     flex-wrap: wrap;
@@ -182,16 +187,51 @@ h4{
     height: 50%;
 
     background-color: cadetblue;
-}
+} */
 
 #barra-left h4{
     line-height: var(--h-h4);
     width: 100%;
 }
 
+#add{
+    line-height: var(--h-add-play);
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--h-marg-bott-add);
+}
+
+
+#add a{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+#plus{
+    height: var(--h-add-play);
+    width: var(--h-add-play);
+    margin-right: 10px;
+    background-color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    
+    color: black;
+}
+
+
+
+#add:hover #plus{
+    background-color: white;
+}
+
 #playlists {
-    /* height: var(--h-playlists); */
-    height: 200px;
+    height: var(--h-playlists);
+    /* display: flex; */
+    /* height: 200px; */
     width: 100%;
     overflow: scroll;
     /* flex-grow: 1; */
@@ -247,8 +287,8 @@ h4{
 }
 
 #user img{
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: calc( (4 / 5) * 25px);
     border-radius: 50%;
     margin-right: 5px;
     background-color: grey;
@@ -350,6 +390,55 @@ section{
     /* border: 2px solid black; */
 }
 
+.play{
+    height:  var(--w-card);
+    width:  var(--w-card);
+    display: none;
+    max-width: var(--max-w-card);
+    max-height: var(--max-w-card);
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+.circle{
+    border: 5px solid white;
+    width: calc(var(--w-card) / 2.5);
+    height: calc(var(--w-card) / 2.5);
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+    /* DEBUG */
+    /* background-color: rgb(110, 65, 200); */
+    /* border: 2px solid black; */
+}
+.circle i{
+    color: white;
+    font-size: calc(var(--w-card) / 4);
+    width: calc(var(--w-card) / 4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+    /* DEBUG */
+    /* background-color: rgb(0, 255, 119); */
+    /* border: 2px solid black; */
+}
+
+.card:hover .play{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+
 
 
 .nome{
@@ -448,6 +537,14 @@ section{
         
 
 
+    }
+    #menu a{
+        display: flex;
+        justify-content: center;
+    }
+
+    #add{
+        display: none;
     }
 
     .big{
