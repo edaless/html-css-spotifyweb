@@ -20,7 +20,7 @@
     /* var(--padd-barra-l)*/
     --padd-barra-l: 20px;
     /* var(--h-menu) */
-    --h-menu: 200px;    
+    --h-menu: 180px;    
     /* var(--h-h4) */
     --h-h4: 30px;
     /* var(--marg-bott-playlists) */
@@ -31,7 +31,7 @@
     /* var(--h-inf) */
     --h-inf: 60px;
     /* var(--h-user) */
-    --h-user: calc(var(--h-inf)) ;
+    /* --h-user: calc(var(--h-inf)) ; */
 
     /* lavorando a questo */
 
@@ -169,34 +169,45 @@ h4{
 }
 
 
-#barra-left i{
+#menu i{
     margin-right: 10px;
 }
 
 
-#barra-left h4{
-    line-height: var(--h-h4);
+
+#cont-play{
+    display: flex;
+    flex-wrap: wrap;
+    overflow: scroll;
+    height: 50%;
+
+    background-color: cadetblue;
 }
 
-
-
+#barra-left h4{
+    line-height: var(--h-h4);
+    width: 100%;
+}
 
 #playlists {
-    height: var(--h-playlists);
+    /* height: var(--h-playlists); */
+    height: 200px;
+    width: 100%;
     overflow: scroll;
+    /* flex-grow: 1; */
     margin-bottom: var(--marg-bott-playlists);
     
 
     
     /* DEBUG */
-    /* background-color: blue; */
+    /* background-color: rgb(247, 0, 255); */
     
 }
 
 #playlists a{
     display:flex;
     
-    margin-top: 20px;
+    margin: 20px 0;
     font-size: 12px;
     font-weight: 500;
     
@@ -208,21 +219,43 @@ h4{
     
 
     /* DEBUG */
-    background-color: darkmagenta;
+    /* background-color: darkmagenta; */
     /* border: 1px solid green; */
 }
 
 #download{
     width: 100%;
-    padding-bottom: 5px;
+    height: 40%;
+    font-size: 12px;
+    
     
     border-bottom: 1px solid var(--grigio);
 }
 
+
+
+#download i{
+    font-size: 10px;
+    margin-right: 5px;
+}
+
 #user{
     
+    height: 60%;
     display: flex;
     align-items: center;
+}
+
+#user img{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 5px;
+    background-color: grey;
+}
+
+#user h4{
+    font-size: 15px;
 }
 
 
