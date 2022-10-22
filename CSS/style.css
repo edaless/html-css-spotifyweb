@@ -8,7 +8,7 @@
 :root{
     
     /* var(--grigio) */
-    --grigio: #b6b6b7;
+    --grigio: #646464;
 
     /* var(--h-barra-t) height barra top*/
     --h-barra-t: 80px;    
@@ -42,7 +42,7 @@
 
 
 
-    /* var(--h-barra-b) height barra top*/
+    /* var(--h-barra-b) height barra bottom*/
     --h-barra-b: 80px;   
 
     /* var(--w-main) */
@@ -55,15 +55,19 @@
 
     /* var(--n-cards)  numero di cards su una linea*/
     --n-cards: 6;
-    /* var(--marg-right-card) */
-    --marg-right-card: 10px;
     /* var(--w-card) width card*/
-    --w-card: calc((var(--w-section)  - (var(--marg-right-card) * var(--n-cards))) / var(--n-cards));
+    --w-card: calc((var(--w-section) / var(--n-cards)) - var(--marg-right-card));
+    /* --w-card: calc((var(--w-section)  - (var(--marg-right-card) * (var(--n-cards) ))) / var(--n-cards)); */
+    
+    /* var(--marg-right-card) */
+    --marg-right-card: calc(var(--w-section) * 0.02);
     /* var(--max-w-card) max width card */
     --max-w-card: 150px;
 
     
 }
+
+
 
 a{
     text-decoration: none;
@@ -91,11 +95,29 @@ h4{
     
 }
 
+.nome{
+    
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    color: white;
+
+
+
+
+
+
+
+    /* DEBUG */
+    /* background-color: rgb(115, 0, 255); */
+    /* border: 2px solid black; */
+}
+
 .subtitle{
     
    
     color: var(--grigio);
-    margin-top: 5px;
     font-size: 12px;
 
     
@@ -111,6 +133,11 @@ h4{
     position: fixed;
     top: 0;
     right:0;
+    padding: 0 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     
 
     height: var(--h-barra-t);
@@ -119,6 +146,43 @@ h4{
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 100;
 
+}
+
+#spazio-upgrade{
+    height: 70px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    /* background-color: antiquewhite; */
+}
+
+
+:root{    
+    /* var(--h-upgrade) */
+    --h-upgrade: 35px;
+    /* var(--w-upgrade) */
+    --w-upgrade: 170px;
+}
+#upgrade{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--w-upgrade);
+    height: var(--h-upgrade);
+    border-radius: calc(var(--h-upgrade) / 2);
+    color: white;
+    font-size: 10px;
+    border: 1px solid white;
+}
+#upgrade:hover{
+    width: calc(var(--w-upgrade) + 10px);
+    height: calc(var(--h-upgrade) + 5px);
+    border-radius: calc(((var(--h-upgrade) + 10px)) / 2);
+    
+    font-size: 11px;
 }
 
 
@@ -139,7 +203,7 @@ h4{
 }
 
 
-#menu{
+.menu{
     height: var(--h-menu);
     /* padding-bottom: 20px; */
     /* DEBUG */
@@ -148,7 +212,7 @@ h4{
 }
 
 
-#menu a{
+.menu a{
     display:flex;
     margin-bottom: 15px;
 
@@ -174,7 +238,7 @@ h4{
 }
 
 
-#menu i{
+.menu i{
     margin-right: 10px;
 }
 
@@ -303,6 +367,12 @@ h4{
 #barra-bottom{
     position: fixed;
     bottom: 0;
+
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     
     
 
@@ -313,6 +383,88 @@ h4{
     z-index: 200;
 
 }
+
+
+.bb{
+    
+    display: flex;
+    align-items: center;
+
+    /* debug */
+    /* height: 20px; */
+    /* width: 100px; */
+    /* background-color: rgb(198, 228, 228); */
+}
+
+#img-player{
+    height: calc(var(--h-barra-b) * 0.6);
+    width: calc(var(--h-barra-b) * 0.6);
+
+    margin-right: 10px;
+}
+#song-stuff {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+
+    /* debug */
+    /* height: 20px; */
+    /* width: 100px; */
+    margin-right: 35px
+    /* background-color: rgb(151, 22, 118); */
+}
+#barra-bottom .nome{
+    font-size: 12px;
+    display: flex;
+    justify-content: flex-start;
+    /* debug */
+    /* height: 20px; */
+    /* width: 100px; */
+    /* background-color: rgb(29, 41, 103); */
+}
+#barra-bottom .subtitle{
+    font-size: 9px;
+    display: flex;
+    justify-content: flex-start;
+    /* debug */
+    /* height: 20px; */
+    /* width: 100px; */
+    /* background-color: rgb(64, 118, 17); */
+}
+
+#barra-bottom .subtitle:hover{
+    text-decoration: underline;
+    color: white;
+}
+
+
+#barra-bottom a{
+    margin-right: 15px;
+    font-size: 15px;
+    
+}
+
+
+.linea{
+    height: 4px;
+    border-radius: 2px;
+
+    
+    /* var(--grigio); */
+}
+
+.cento{
+    width: 100px;
+    background-color: var(--grigio) ;
+    
+}
+
+.venti{
+    width: 20px;
+    background-color: white;
+    
+}
+
 
 
 /* MAIN //////////////////////////////////////////////////////////////// */
@@ -355,20 +507,26 @@ section{
 
     margin: 20px 0;
     display: flex;
+    justify-content: space-between;
     
-    justify-content: space-between ;
+    
     
 }
 
 .card{
     width:  var(--w-card);
+    /* height: 200px; */
     max-width: var(--max-w-card);
     margin-right: var(--marg-right-card);
     margin-bottom: 50px;
     /* DEBUG */
-    /* background-color: rgb(17, 255, 0); */
+    background-color: rgb(17, 255, 0);
     /* border: 2px solid black; */
 
+}
+
+.card:last-child{
+    margin-right: 0;
 }
 
 .immagine{
@@ -403,10 +561,9 @@ section{
 
 .circle{
     border: 5px solid white;
-    width: calc(var(--w-card) / 2.5);
-    height: calc(var(--w-card) / 2.5);
-    max-width: 50px;
-    max-height: 50px;
+    width: 40px;
+    height: 40px;
+    
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -419,8 +576,8 @@ section{
 }
 .circle i{
     color: white;
-    font-size: calc(var(--w-card) / 4);
-    width: calc(var(--w-card) / 4);
+    font-size: 20px;
+    margin-left: 3px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -441,30 +598,16 @@ section{
 
 
 
-.nome{
+.card .nome{
     margin: 10px 0;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    flex-wrap: wrap;
-    color: white;
-
-
-
-
-
-
-
-    /* DEBUG */
-    /* background-color: rgb(115, 0, 255); */
-    /* border: 2px solid black; */
 }
-
 .card .subtitle{
     
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    margin: 5px 0;
 
     
     
@@ -527,7 +670,7 @@ section{
     /* var(--w-barra-l) width barra left*/
     --w-barra-l: 40px;        
     /* var(--n-cards) */
-    --n-cards: 2;
+    /* --n-cards: 2; */
     }
     
     #barra-left{
@@ -538,7 +681,10 @@ section{
 
 
     }
-    #menu a{
+    
+    
+    
+    .menu a{
         display: flex;
         justify-content: center;
     }
@@ -558,6 +704,10 @@ section{
 
     #barra-left i{
         margin-right: 0;
+    }
+
+    #user{
+        height: 24px;
     }
     
     
