@@ -6,65 +6,8 @@
 }
 
 :root{
-    
     /* var(--grigio) */
     --grigio: #646464;
-
-    /* var(--h-barra-t) height barra top*/
-    --h-barra-t: 80px;    
-
-
-
-
-    /* barra left//////////////////////////// */
-    /* var(--w-barra-l) width barra left*/
-    --w-barra-l: 200px;
-    /* var(--h-barra-l) */
-    --h-barra-l: calc(100vh - var(--h-barra-b) );
-    /* var(--padd-barra-l)*/
-    --padd-barra-l: 20px;
-    /* var(--h-menu) */
-    --h-menu: 180px;    
-    /* var(--h-h4) */
-    --h-h4: 30px;
-    /* var(--h-add-play) */
-    --h-add-play: 30px;
-    /* var(--h-marg-bott-add) */
-    --h-marg-bott-add: 10px;
-    /* var(--marg-bott-playlists) */
-    --marg-bott-playlists: 10px;
-    /* var(--h-playlists) */
-    --h-playlists: calc(var(--h-barra-l) - var(--h-menu) - var(--padd-barra-l) - var(--h-h4) - var(--h-inf) - var(--marg-bott-playlists) - var(--h-add-play) - var(--h-marg-bott-add))
-    ;
-    /* var(--h-inf) */
-    --h-inf: 60px;
-    
-
-
-
-    /* var(--h-barra-b) height barra bottom*/
-    --h-barra-b: 80px;   
-
-    /* var(--w-main) */
-    --w-main: calc(100vw - var(--w-barra-l));
-    /* var(--padd-main) */
-    --padd-main: 20px;
-
-    /* var(--w-section) */
-    --w-section: calc( var(--w-main) - 2 * var(--padd-main));
-
-    /* var(--n-cards)  numero di cards su una linea*/
-    --n-cards: 6;
-    /* var(--w-card) width card*/
-    --w-card: calc((var(--w-section) / var(--n-cards)) - var(--marg-right-card));
-    /* --w-card: calc((var(--w-section)  - (var(--marg-right-card) * (var(--n-cards) ))) / var(--n-cards)); */
-    
-    /* var(--marg-right-card) */
-    --marg-right-card: calc(var(--w-section) * 0.02);
-    /* var(--max-w-card) max width card */
-    --max-w-card: 150px;
-
-    
 }
 
 
@@ -160,7 +103,16 @@ h4{
 }
 
 
+
+
+
 /* #barra-top //////////////////////////////////////////////////////////////// */
+:root{
+    
+    /* var(--h-barra-t) height barra top*/
+    --h-barra-t: 80px;    
+}
+
 #barra-top{
     position: fixed;
     top: 0;
@@ -219,8 +171,33 @@ h4{
 
 
 /* #barra-left //////////////////////////////////////////////////////////////// */
+:root{
+    /* var(--w-barra-l) width barra left*/
+    --w-barra-l: 200px;
+    /* var(--h-barra-l) */
+    --h-barra-l: calc(100vh - var(--h-barra-b) );
+    /* var(--padd-barra-l)*/
+    --padd-barra-l: 20px;
+    /* var(--h-menu) */
+    --h-menu: 180px;    
+    /* var(--h-h4) */
+    --h-h4: 30px;
+    /* var(--h-add-play) */
+    --h-add-play: 30px;
+    /* var(--h-marg-bott-add) */
+    --h-marg-bott-add: 10px;
+    /* var(--marg-bott-playlists) */
+    --marg-bott-playlists: 10px;
+    
+    
+}
+
 #barra-left{
     position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
     top: 0;
     left:0;
     padding: var(--padd-barra-l) var(--padd-barra-l) 0;
@@ -233,15 +210,12 @@ h4{
     z-index: 200;
 
 }
-
-
-.menu{
-    height: var(--h-menu);
-    /* padding-bottom: 20px; */
-    /* DEBUG */
-    /* background-color: blue; */
-    
+#left-top{
+    display: flex;
+    flex-direction: column;
 }
+
+
 
 
 .menu a{
@@ -275,15 +249,9 @@ h4{
 }
 
 
-/* 
-#cont-play{
-    display: flex;
-    flex-wrap: wrap;
-    overflow: scroll;
-    height: 50%;
 
-    background-color: cadetblue;
-} */
+
+
 
 #barra-left h4{
     line-height: var(--h-h4);
@@ -325,7 +293,7 @@ h4{
 }
 
 #playlists {
-    height: var(--h-playlists);
+    
     /* display: flex; */
     /* height: 200px; */
     width: 100%;
@@ -351,7 +319,9 @@ h4{
 
 
 #inf{
-    height: var(--h-inf);
+    
+
+    
     
 
     /* DEBUG */
@@ -396,6 +366,11 @@ h4{
 
 
 /* #barra-bottom //////////////////////////////////////////////////////////////// */
+:root{  
+    /* var(--h-barra-b) height barra bottom*/
+    --h-barra-b: 80px;   
+}
+
 #barra-bottom{
     position: fixed;
     bottom: 0;
@@ -588,6 +563,28 @@ h4{
 
 
 /* MAIN //////////////////////////////////////////////////////////////// */
+:root{
+    /* var(--w-main) */
+    --w-main: calc(100vw - var(--w-barra-l));
+    /* var(--padd-main) */
+    --padd-main: 20px;
+
+    /* var(--w-section) */
+    --w-section: calc( var(--w-main) - 2 * var(--padd-main));
+
+    /* var(--n-cards)  numero di cards su una linea*/
+    --n-cards: 6;
+    /* var(--w-card) width card*/
+    --w-card: calc((var(--w-section) / var(--n-cards)) - var(--marg-right-card));
+    /* --w-card: calc((var(--w-section)  - (var(--marg-right-card) * (var(--n-cards) ))) / var(--n-cards)); */
+    
+    /* var(--marg-right-card) */
+    --marg-right-card: calc(var(--w-section) * 0.02);
+    /* var(--max-w-card) max width card */
+    --max-w-card: 150px;
+}
+
+
 main{
     width: var(--w-main);
     margin-left: var(--w-barra-l);
